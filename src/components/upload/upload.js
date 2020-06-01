@@ -10,6 +10,7 @@ class Upload extends Component {
     constructor() {
       super();
       this.state = {
+        isLoading: false,
         files: [],
         uploadedFileCloudinaryUrl: '',
       };
@@ -26,6 +27,9 @@ class Upload extends Component {
     }
 
     onUpload(file) {
+        this.setState({
+            isLoading: true
+        });
         let upload = request.post(CLOUDINARY_UPLOAD_URL)
                         .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
                         .field('file', file);
@@ -39,19 +43,16 @@ class Upload extends Component {
                 this.setState({
                     uploadedFileCloudinaryUrl: response.body.secure_url
                 });
-                // Will send to backend
+                this.setState({
+                    isLoading: false
+                });
+                // The following URL can be sent to backend for database
                 console.log('IMG URL:' + response.body.secure_url);
             }
         })
     }
 
     render() {
-      const files = this.state.files.map(file => (
-        <li key={file.name}>
-          {file.name} - {file.size} bytes
-        </li>
-      ));
-  
       return (
         <form>
             <Dropzone onDrop={this.onDrop}>
@@ -65,6 +66,9 @@ class Upload extends Component {
             )}
             </Dropzone>
 
+            <div>
+                {this.state.isLoading === false ? null : <h3>Uploading...</h3>}
+            </div>
             <div>
                 {this.state.uploadedFileCloudinaryUrl === '' ? null : 
                 <div>
