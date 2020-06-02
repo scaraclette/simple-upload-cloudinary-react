@@ -2,7 +2,7 @@
 Simple file upload using [Cloudinary](https://cloudinary.com/) and React. Code is an updated version from [Damonbauer's react-cloudinary](https://github.com/damonbauer/react-cloudinary.git). Changes include code updates to using [React-Dropzone](https://react-dropzone.js.org/), loading message during POST request for Cloudinary, and local enviornment variable setup to prevent sharing Cloudinary API.<br>
 Upload application lives within src/components/upload
 
-![Example](https://media.giphy.com/media/eeogcYlc1lZZmS7Z6z/giphy.gif)
+![Example](https://media.giphy.com/media/ckYzZeIAttB6sOmmlI/giphy.gif)
 
 ## Set environment variables
 Create a <b>.env</b> file and follow the .env_sample variables. Change the variables while refering to Cloudinary notes below.

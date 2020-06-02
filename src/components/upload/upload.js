@@ -52,7 +52,6 @@ class Upload extends Component {
     }
 
     render() {
-        console.log(CLOUDINARY_UPLOAD_PRESET);
       return (
         <form>
             <Dropzone onDrop={this.onDrop}>
