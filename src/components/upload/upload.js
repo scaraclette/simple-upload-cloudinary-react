@@ -66,7 +66,7 @@ class Upload extends Component {
             )}
             </Dropzone>
 
-            {/* The following div shows  */}
+            {/* The following div shows the status of the upload and uploaded image with URL*/}
             <div>
                 {this.state.isLoading === false ?
                     <div>
