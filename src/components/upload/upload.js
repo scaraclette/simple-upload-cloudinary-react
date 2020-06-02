@@ -60,7 +60,7 @@ class Upload extends Component {
                 <section className="container">
                 <div {...getRootProps({className: 'dropzone'})}>
                     <input {...getInputProps()} />
-                    <p>Click to select files</p>
+                    <p>Click to select files (maximum of 10MB)</p>
                 </div>
                 </section>
             )}
