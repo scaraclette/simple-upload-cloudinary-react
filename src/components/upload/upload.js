@@ -52,7 +52,7 @@ class Upload extends Component {
     }
 
     render() {
-      return (
+        return (
         <form>
             <Dropzone onDrop={this.onDrop}>
             {({getRootProps, getInputProps}) => (
