@@ -3,8 +3,8 @@ import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
 // Hide in the future using environment variable
-const CLOUDINARY_UPLOAD_PRESET = 'r1whlcfj';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/sichonky/image/upload';
+const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_PRESET;
+const CLOUDINARY_UPLOAD_URL = process.env.REACT_APP_API;
 
 class Upload extends Component {
     constructor() {
@@ -52,6 +52,7 @@ class Upload extends Component {
     }
 
     render() {
+        console.log(CLOUDINARY_UPLOAD_PRESET);
       return (
         <form>
             <Dropzone onDrop={this.onDrop}>

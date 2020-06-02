@@ -3,12 +3,14 @@ Simple file upload using [Cloudinary](https://cloudinary.com/) and React. Code i
 
 ![Example](https://media.giphy.com/media/eeogcYlc1lZZmS7Z6z/giphy.gif)
 
+## Set environment variables
+Create a <b>.env</b> file and follow the .env_sample variables. Change the variables while refering to Cloudinary notes below.
+
+## Cloudinary notes
+1. To enable API calls with this code, create a new preset through Settings -> Upload -> Upload presets. Add an <b>unsigned</b> upload preset and copy name to .env file for variable REACT_APP_PRESET.
+2. To get CLOUDINARY_UPLOAD_URL, go to dashboard, click 'more' (if other URLs are collapesed), click on lower arrow on API Base URL. Use image upload URL, which should look like https://api.cloudinary.com/v1_1/YOUR_CLOUDINARY_CLOUD_NAME/image/upload. Set the .env for variable REACT_APP_API.
+
 ## To run code
 1. Create Cloudinary account
 2. ```$ npm install ```
-3. Specificy environment variables for CLOUDINARY_UPLOAD_PRESET & CLOUDINARY_UPLOAD_URL (refer to notes on where to find URL)
-4. ```$ npm start```
-
-## Cloudinary notes
-1. To enable API calls with this code, create a new preset through Settings -> Upload -> Upload presets. Add an <b>unsigned</b> upload preset and copy name to CLOUDINARY_UPLOAD_PRESET.
-2. To get CLOUDINARY_UPLOAD_URL, go to dashboard, click 'more' (if other URLs are collapesed), click on lower arrow on API Base URL. Use image upload URL, which should look like https://api.cloudinary.com/v1_1/{cloudinary cloud name}/image/upload 
+3. ```$ npm start```
