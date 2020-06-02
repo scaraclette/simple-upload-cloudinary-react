@@ -17,7 +17,7 @@ class Upload extends Component {
       this.onDrop = this.onDrop.bind(this);
       this.onUpload = this.onUpload.bind(this);
     }
-  
+
     onDrop(files) {
         this.setState({
             uploadedFile: files[0],
@@ -35,7 +35,7 @@ class Upload extends Component {
 
         upload.end((err, response) => {
             if (err) {
-                console.err(err);
+                console.error(err);
             }
 
             if (response.body.secure_url !== '') {
@@ -70,7 +70,7 @@ class Upload extends Component {
             <div>
                 {this.state.isLoading === false ?
                     <div>
-                        {this.state.uploadedFileCloudinaryUrl === '' ? null : 
+                        {this.state.uploadedFileCloudinaryUrl === '' ? null :
                         <div>
                         <p>{this.state.uploadedFileCloudinaryUrl}</p>
                         <img src={this.state.uploadedFileCloudinaryUrl} width='500px'/>
