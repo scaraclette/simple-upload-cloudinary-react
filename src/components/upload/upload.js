@@ -22,7 +22,6 @@ class Upload extends Component {
         this.setState({
             uploadedFile: files[0],
         });
-        // console.log(files[0]);
         this.onUpload(files[0]);
     }
 
@@ -66,15 +65,17 @@ class Upload extends Component {
             )}
             </Dropzone>
 
+            {/* The following div shows  */}
             <div>
-                {this.state.isLoading === false ? null : <h3>Uploading...</h3>}
-            </div>
-            <div>
-                {this.state.uploadedFileCloudinaryUrl === '' ? null : 
-                <div>
-                <p>{this.state.uploadedFileCloudinaryUrl}</p>
-                <img src={this.state.uploadedFileCloudinaryUrl} width='500px'/>
-                </div>}
+                {this.state.isLoading === false ?
+                    <div>
+                        {this.state.uploadedFileCloudinaryUrl === '' ? null : 
+                        <div>
+                        <p>{this.state.uploadedFileCloudinaryUrl}</p>
+                        <img src={this.state.uploadedFileCloudinaryUrl} width='500px'/>
+                        </div>}
+                    </div>
+                 : <h3>Uploading...</h3>}
             </div>
         </form>
       );
